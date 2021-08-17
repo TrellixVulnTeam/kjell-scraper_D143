@@ -4,11 +4,13 @@ A program for scraping on kjell.com
 # Requrements
 * Docker running on arm64
 * create a working requirements.txt
-```bash
-cd kjell-scraper/kjell-scraper
-rm requirements.txt
-nano requirements.txt
-```
+
+Delete the old requirements.txt file
+`cd kjell-scraper/kjell-scraper && rm requirements.txt `
+
+Create a new requirements.txt with a textexitor (here we use nano)
+`nano requirements.txt`
+
 And then paste following information and save
 ```txt
 autopep8==1.5.7
