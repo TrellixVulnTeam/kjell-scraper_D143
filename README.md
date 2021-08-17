@@ -7,8 +7,9 @@ A program for scraping on kjell.com
 # Installation
 Clone git and build the image
 ```bash
-docker build --no-cache dockerfile
+docker build --no-cache -t kjell-scraper dockerfile
 ```
+
 Run the container
 ```bash
 docker run -d -p 80:3000 --name kjell-scraper kjell-scraper
