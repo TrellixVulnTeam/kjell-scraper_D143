@@ -6,8 +6,8 @@ docker running on arm64
 
 # Installation
 Clone git and run
-'''bash
+```bash
 docker build --no-cache dockerfile
-'''
+```
 
 
