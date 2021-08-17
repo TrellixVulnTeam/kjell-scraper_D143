@@ -9,8 +9,9 @@ from selenium.webdriver.chrome.options import Options
 # Adding options for the chromedriver
 chrome_options = Options()
 # Make it run without showning browser
-chrome_options.add_argument('headless')
-chrome_options.add_argument('window-size=1200x600')
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--window-size=1200x600')
 # Disable devtools
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
@@ -33,7 +34,7 @@ def getInfo(article_string):
     name_list = []
     link_list = []
     driver = webdriver.Chrome(
-        "C:/Chromedriver/chromedriver.exe", options=chrome_options)
+        "/bin/chromedriver", options=chrome_options)
     # For each article enterd into the list open kjell.com site and get price
     for article in article_list:
         url = "https://www.kjell.com/" + str(article)

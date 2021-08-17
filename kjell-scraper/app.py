@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from kjell_api import getInfo
 
-app = Flask(__name__, static_folder="../kjell-frontend/build",
+app = Flask(__name__, static_folder="../build",
               static_url_path='/')
 
 
