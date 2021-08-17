@@ -6,10 +6,14 @@ A program for scraping on kjell.com
 * create a working requirements.txt
 
 Delete the old requirements.txt file
-`cd kjell-scraper/kjell-scraper && rm requirements.txt `
+```bash
+cd kjell-scraper/kjell-scraper && rm requirements.txt 
+```
 
 Create a new requirements.txt with a textexitor (here we use nano)
-`nano requirements.txt`
+```bash
+nano requirements.txt
+```
 
 And then paste following information and save
 ```txt
