@@ -2,10 +2,12 @@
 A program for scraping on kjell.com
 
 # Requrements
-* Docker running on arm64
+* Docker
 
 # Installation
-Clone git and build the image
+Download lastest realease here
+
+Extract the folder and run this command to create a image for the program
 ```bash
 docker build --no-cache -t kjell-scraper dockerfile
 ```
