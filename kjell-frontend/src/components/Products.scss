@@ -17,6 +17,14 @@
     align-items: center;
     padding-top: 0.5em;
   }
+  button{
+    border: none;
+    align-self: flex-start;
+    img{
+      width: 2vw;
+      border-radius: 0;
+    }
+  }
   h1 {
     color: black;
     width: 50%;
