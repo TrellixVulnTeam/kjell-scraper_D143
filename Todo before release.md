@@ -1,7 +1,13 @@
 # Create a proper requirements.txt
 
 # App.py
-* Make flask serve the build folder
+Make flask serve the build folder
+```python
+@app.route("/")
+def index(){
+  
+}
+```
 * Add the static folder and path
 
 # kjell_api.py
@@ -13,5 +19,5 @@ chrome_options.add_argument('--window-size=1200x600')
 ```
 Uppdatera path till chromedriver
 ```python
-chromedriver_path = "/bin/chromedriver/
+chromedriver_path = "/bin/chromedriver/"
 ```
