@@ -3,8 +3,11 @@ import "./Products.scss";
 import check_box from "./select_box.png";
 import selected_check_box from "./select_box_checked.png";
 
-export const Product = ({ name, link, article_number, price }) => {
-  const [isSelected, setSelection] = useState(false);
+
+
+export const Product = ({ name, link, article_number, price }) => {  
+
+  const [isSelected, setSelection] = useState(false)
 
   function createSelection(selection) {
     if (selection) {
