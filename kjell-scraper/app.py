@@ -1,13 +1,14 @@
 from flask import Flask, request, jsonify
 from kjell_api import getInfo
 
-app = Flask(__name__, static_folder="../build",
+app = Flask(__name__, static_folder="../kjell-frontend/build",
               static_url_path='/')
 
-
+"""
 @app.route("/")
 def index():
     return app.send_static_file('index.html')
+"""
 
 @app.route('/api/get_products', methods=['GET', 'POST'])
 def get_products():
