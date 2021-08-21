@@ -7,7 +7,7 @@ A program for scraping on kjell.com
 
 # Installation
 Download the latest release here from github.
-Make shure you have installed the chromedriver under 'C:/Program/chromedriver.exe' or change it in the './kjell-scraper/kjell-api.py' file
+Make shure you have installed the chromedriver under *C:/Program/chromedriver.exe* or change it in the *./kjell-scraper/kjell-api.py* file
 
 Build the docker image from the download
 ```bash
