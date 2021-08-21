@@ -33,7 +33,7 @@ def getInfo(article_string):
     name_list = []
     link_list = []
     driver = webdriver.Chrome(
-        "C:/Chromedriver/chromedriver.exe", options=chrome_options)
+        "C:/Program/chromedriver.exe", options=chrome_options)
     # For each article enterd into the list open kjell.com site and get price
     for article in article_list:
         url = "https://www.kjell.com/" + str(article)
