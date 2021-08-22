@@ -9,16 +9,6 @@ body {
 header {
   background-color: rgb(25, 117, 188);
 }
-
-.contianer {
-  display: inline-flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-left: 1vw;
-  width: 98vw;
-  max-height: 72vh;
-  overflow-y: auto;
-}
 .input_form {
   form {
     justify-content: center;
