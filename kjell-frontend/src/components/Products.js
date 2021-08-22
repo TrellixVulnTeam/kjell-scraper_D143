@@ -3,11 +3,8 @@ import "./Products.scss";
 import check_box from "./select_box.png";
 import selected_check_box from "./select_box_checked.png";
 
-
-
-export const Product = ({ name, link, article_number, price }) => {  
-
-  const [isSelected, setSelection] = useState(false)
+export const Product = ({ name, link, article_number, price }) => {
+  const [isSelected, setSelection] = useState(false);
 
   function createSelection(selection) {
     if (selection) {
@@ -35,23 +32,6 @@ export const Product = ({ name, link, article_number, price }) => {
         <p>Artnr: {article_number}</p>
         <p id="price">{price}:-</p>
       </div>
-    </div>
-  );
-};
-
-export const Products = ({ products }) => {
-  return (
-    <div className="contianer">
-      {products.map((product) => {
-        return (
-          <Product
-            name={product.name}
-            link={product.link}
-            article_number={product.article_number}
-            price={product.price}
-          />
-        );
-      })}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Products } from "./components/Products";
+import ProductBox from "./components/ProductBox"
 import React, { useState } from "react";
 import { trackPromise } from "react-promise-tracker";
 import { LoadingIndicator } from "./components/Loader";
@@ -67,7 +67,7 @@ function App() {
       </div>
       <div className="main">
         <LoadingIndicator />
-        <Products products={products} />
+        <ProductBox products={products} />
       </div>
     </div>
   );
