@@ -15,6 +15,10 @@
   height: 10vh;
   width: 15vw;
   border: none;
+  position: fixed;
+  margin-left: 80vw;
+  margin-top: 57vh;
+  box-shadow: rgba(126, 126, 126, 0.5) 0px 4px 16px 0px;
 }
 .copyButton:hover{
   background-color: rgb(20, 89, 141);

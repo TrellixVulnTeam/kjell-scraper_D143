@@ -1,0 +1,53 @@
+.notification-wrapper {
+  position: fixed;
+  width: 30vw;
+  margin-left: 35vw;
+  margin-top: 5vh;
+  height: auto;
+  width: fit-content;
+
+  .notification-item {
+    box-shadow: rgba(77, 77, 77, 0.74) 0px 4px 16px 0px;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    width: 30vw;
+    height: 10vh;
+    p {
+      color: white;
+      font-family: sans-serif;
+      font-weight: bolder;
+      font-size: 1.2em;
+    }
+    animation: fallDown 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fallDown {
+      0%{
+          margin-top: -17vh;
+      }
+      100%{
+          margin-top: 1em;
+      }
+  }
+  @keyframes riseUp {
+      0%{
+        margin-top: 1em;
+      }
+      100%{
+        margin-top: -17vh;
+      }
+  }
+  .notification-item.exit{
+      animation: riseUp 1s;
+      animation-fill-mode: forwards;
+  }
+  .notification-item.success {
+    background-color: rgba(0, 201, 0, 0.753);
+  }
+  .notification-item.error {
+    background-color: rgba(255, 0, 0, 0.753);
+  }
+}

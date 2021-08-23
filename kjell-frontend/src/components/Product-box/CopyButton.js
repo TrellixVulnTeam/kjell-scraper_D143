@@ -1,7 +1,10 @@
+import { useContext } from "react/cjs/react.development";
+import { NotificationContext } from "../NotificationProvider";
+import { v4 } from "uuid";
+
 const CopyButton = ({ articleList }) => {
-    /**
-     * Funtion for copying the selected articles
-     */
+  const dispacth = useContext(NotificationContext);
+
   function CopyArticleString() {
     // String for to copy
     var test = "";
@@ -14,8 +17,20 @@ const CopyButton = ({ articleList }) => {
     test = test.slice(0, -1);
     // Copy and alert
     navigator.clipboard.writeText(test);
-    alert("Copied");
+    // Send notification
+    dispacth({
+      type: "ADD_NOTIFICATION",
+      payload: {
+        id: v4(),
+        type: "SUCCESS",
+        message: "Artikelsträng kopierad!",
+      },
+    });
   }
-  return <button className="copyButton" onClick={CopyArticleString}>Kopiera artikelsträng</button>;
+  return (
+    <button className="copyButton" onClick={CopyArticleString}>
+      Kopiera artikelsträng
+    </button>
+  );
 };
 export default CopyButton;

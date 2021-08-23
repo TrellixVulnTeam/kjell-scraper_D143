@@ -5,7 +5,7 @@ Build the frontend and copy the frontend and kjell-scraper folder to a release z
 
 # Requirements
 Make shure the requirements are right and add the gunicon to the requirements.txt
-```
+```txt
 autopep8==1.5.7
 click==8.0.1
 colorama==0.4.4
