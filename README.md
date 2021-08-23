@@ -15,5 +15,5 @@ docker build --no-cache -t kjell-scraper ./
 ```
 Run the docker image in a container
 ```bash
-docker run --name kjell-scraper -p 80:3000 kjell-scraper
+docker run --name kjell-scraper --shm-size=2g -p 80:3000 kjell-scraper
 ```
