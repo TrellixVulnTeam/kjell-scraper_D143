@@ -1,4 +1,4 @@
-
+.vscode/
 /kjell-frontend/build/
 /kjell-frontend/node_modules/.cache/
 /kjell-frontend/node_modules/.cache/.eslintcache
