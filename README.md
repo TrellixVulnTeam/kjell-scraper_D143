@@ -17,3 +17,4 @@ Run the docker image in a container
 ```bash
 docker run --name kjell-scraper --shm-size=2g -p 80:3000 kjell-scraper
 ```
+If you want to change any paramaters for the gunicorn server thats in place to serve the website you can change them in the *dockerfile*
