@@ -1,3 +1,4 @@
+import re
 # Selenium import (they clutter)
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -21,7 +22,10 @@ delay = 5
 # Function for getting price from kjell.com
 def getInfo(article_string):
     # Make string into list
-    article_list = article_string.split("|")
+    article_list = re.split("[| ]", article_string)
+    for item in list(article_list):
+        if item == "":
+            article_list.remove(item)
     # Dummyproof the input
     if article_list[0] == "" or len(article_list[0]) < 5:
         article_list.pop(0)
@@ -61,9 +65,10 @@ def getInfo(article_string):
             name_list.append(name_element.text)
         except TimeoutException:
             name_list.append("No Info")
-        
+
         try:
-            img_element = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[1]/div/div[3]/section[1]/div[2]/div[1]/div[1]/div/div[1]/span/img')))
+            img_element = WebDriverWait(driver, delay).until(EC.presence_of_element_located(
+                (By.XPATH, '/html/body/div[2]/div[1]/div/div[3]/section[1]/div[2]/div[1]/div[1]/div/div[1]/span/img')))
             link_list.append(img_element.get_attribute("src"))
         except TimeoutException:
             link_list.append("Error")
@@ -72,22 +77,24 @@ def getInfo(article_string):
     driver.quit()
     product_list = []
     for index, article in enumerate(article_list):
-        product_list.append(Products(article, name_list[index], price_list[index], link_list[index]))
+        product_list.append(
+            Products(article, name_list[index], price_list[index], link_list[index]))
     return(product_list)
- 
+
+
 class Products():
     def __init__(self, article_number, name, price, link):
         self._article_number = article_number
         self._name = name
         self._price = price
         self.link = link
-    
+
     def get_article_number(self):
         return self._article_number
 
     def get_name(self):
         return self._name
-    
+
     def get_price(self):
         return self._price
 

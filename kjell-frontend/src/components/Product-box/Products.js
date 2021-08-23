@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { v4 } from "uuid";
 import "./Products.scss";
 import Checkbox from "./Checkbox";
+import { NotificationContext } from "../NotificationProvider";
 
 export const Product = ({ name, link, article_number, price, onChange }) => {
   // The value if the product is selected or not
   const [isSelected, setSelection] = useState(false);
+  const dispacth = useContext(NotificationContext);
+  useEffect(() => {
+    if (name == "No Info") {
+      dispacth({
+        type: "ADD_NOTIFICATION",
+        payload: {
+          id: v4(),
+          type: "",
+          message: "Felaktig input upptäckt",
+        },
+      });
+    }
+  }, []);
 
   return (
     <div className="product">
