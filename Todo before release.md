@@ -25,9 +25,9 @@ gunicorn==19.10.0
 Make flask serve the build folder
 ```python
 @app.route("/")
-def index(){
+def index():
   return app.send_static_file('index.html')
-}
+
 ```
 Add the static folder and path
 ```python
@@ -44,7 +44,7 @@ chrome_options.add_argument('--window-size=1200x600')
 ```
 Uppdatera path till chromedriver
 ```python
-chromedriver_path = "/bin/chromedriver/"
+chromedriver_path = "/bin/chromedriver"
 ```
 
 # Dockerfile
@@ -57,5 +57,5 @@ WORKDIR /code/kjell-scraper
 RUN dos2unix requirements.txt
 RUN pip install -r requirements.txt
 RUN yes | pacman -Rs dos2unix
-CMD ["gunicorn","-b","0.0.0.0:3000","-w","4","app:app"]
+CMD ["gunicorn","-b","0.0.0.0:3000","-t","0","-w","4","app:app"]
 ```
