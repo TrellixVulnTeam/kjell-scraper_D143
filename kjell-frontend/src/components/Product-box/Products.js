@@ -17,7 +17,7 @@ export const Product = ({ name, link, article_number, price, onChange }) => {
           }}
         />
         <h1>{name}</h1>
-        <img src={link} />
+        <img alt="product-img" src={link} />
       </div>
       <div className="content">
         <p>Artnr: {article_number}</p>

@@ -31,9 +31,6 @@ const ProductBox = ({ products }) => {
       {products.map((product) => {
         return (
           <div>
-            {checkedArticles.map((item) => {
-              <h1>{item}</h1>;
-            })}
             <Product
               onChange={setCheckedState}
               name={product.name}

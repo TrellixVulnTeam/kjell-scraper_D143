@@ -1,7 +1,7 @@
 import React from "react";
 import "./Notifications.scss";
 import Notification from "./Notification";
-import { createContext, useReducer } from "react/cjs/react.development";
+import { createContext, useReducer } from "react";
 
 export const NotificationContext = createContext();
 

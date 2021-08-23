@@ -16,8 +16,8 @@ const Checkbox = (props) => {
 
   return (
     <button onClick={() => props.onClick(createSelection(props.isSelected))}>
-      {props.isSelected && <img src={selected_check_box} />}
-      {!props.isSelected && <img src={check_box} />}
+      {props.isSelected && <img alt="unchecked-box"src={selected_check_box} />}
+      {!props.isSelected && <img alt="checked-box" src={check_box} />}
     </button>
   );
 };
