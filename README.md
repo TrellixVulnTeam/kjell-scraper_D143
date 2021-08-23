@@ -1,17 +1,17 @@
 # kjell-scraper
-A program for scraping on kjell.com
+A program for helping the sellers at Kjell & Co with their label management in the stores.  
 
 # Requirements
-* Docker
+* Docker running on arm64 (x64 version is planned)
 * Chromedriver
 
 # Installation
 Download the latest release here from github.
-Make shure you have installed the chromedriver under *C:/Program/chromedriver.exe* or change it in the *./kjell-scraper/kjell-api.py* file
+Make shure you have installed the chromedriver has the path */bin/chromedriver* or change it in the *./kjell-scraper/kjell-api.py* file
 
-Build the docker image from the download
+Build the docker image from inside the extracted folder
 ```bash
-docker build --no-cache -t kjell-scraper ./
+docker build -t kjell-scraper ./
 ```
 Run the docker image in a container
 ```bash
