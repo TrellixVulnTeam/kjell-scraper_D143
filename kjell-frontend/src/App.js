@@ -1,6 +1,6 @@
 import "./App.scss";
-import ProductBox from "./components/Product-box/ProductBox"
-import Header from "./components/Header"
+import ProductBox from "./components/Product-box/ProductBox";
+import Header from "./components/Header";
 import React, { useState } from "react";
 import { trackPromise } from "react-promise-tracker";
 import { LoadingIndicator } from "./components/Loader";

@@ -1,11 +1,15 @@
 .contianer {
   display: inline-flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin-left: 1vw;
   width: 98vw;
   max-height: 72vh;
   overflow-y: auto;
+}
+.spacer{
+  display: block;
+  width: 98vw;
+  height: 20vh;
 }
 .copyButton{
   background-color: rgb(25, 117, 188);
@@ -26,6 +30,7 @@
 .product {
   /*box-shadow: rgb(179 179 179 / 50%) 0px 4px 16px 0px;*/
   width: 30vw;
+  margin-left: 1.5vw;
   border-radius: 1em;
   display: flex;
   flex-direction: column;

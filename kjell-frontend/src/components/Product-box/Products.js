@@ -8,6 +8,8 @@ export const Product = ({ name, link, article_number, price, onChange }) => {
   // The value if the product is selected or not
   const [isSelected, setSelection] = useState(false);
   const dispacth = useContext(NotificationContext);
+
+  // When the product is created check if its a No info card and notify if it is
   useEffect(() => {
     if (name == "No Info") {
       dispacth({
