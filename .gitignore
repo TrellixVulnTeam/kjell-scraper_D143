@@ -4,4 +4,5 @@
 /kjell-frontend/node_modules/.cache/.eslintcache
 /kjell-scraper/__pycache__/
 /kjell-scraper/lib/
+/kjell-scraper/Scripts/
 .eslintcache
