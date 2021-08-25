@@ -7,6 +7,7 @@ const ProductBox = (props) => {
   //The list of products that are selected
   const [checkedArticles, setCheckedArticles] = useState([]);
   const [showCopyButton, setShowCopyButton] = useState(false);
+  const [showSpace, setShowSpace] = useState(false);
 
   /**
    * A function for making a list of all the products that is checked, 
@@ -16,22 +17,30 @@ const ProductBox = (props) => {
    * @param {string} article_number The article number of the product
    */
   function setCheckedState(isChecked, article_number) {
+    // Add checked articles to list
     if (isChecked) {
       checkedArticles.push(article_number);
     } else {
       checkedArticles.splice(checkedArticles.indexOf(article_number), 1);
     }
+    // Check if any articles are checked
     if (checkedArticles.length > 0) {
       setShowCopyButton(true);
+      // Check if the list is long enough to need extra space
+      if(props.products.length >= 6){
+        setShowSpace(true)
+      }
     } else {
       setShowCopyButton(false);
+      setShowSpace(false)
     }
   }
 
   // Set the checkedproducts and copybutton to default everytime the products prop is changed
   useEffect(() => {
     setCheckedArticles([]);
-    setShowCopyButton(false)
+    setShowCopyButton(false);
+    setShowSpace(false)
   }, [props.products]);
 
   return (
@@ -50,7 +59,7 @@ const ProductBox = (props) => {
         );
       })}
       {showCopyButton && <CopyButton articleList={checkedArticles} />}
-      <div className="spacer"></div>
+      {showSpace && <div className="spacer"></div>}
     </div>
   );
 };

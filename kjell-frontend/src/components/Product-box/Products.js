@@ -27,6 +27,7 @@ export const Product = ({ name, link, article_number, price, onChange }) => {
     <div className="product">
       <div className="heading">
         <Checkbox
+          className="checkbox"
           isSelected={isSelected}
           onClick={(value) => {
             setSelection(value);
@@ -37,8 +38,8 @@ export const Product = ({ name, link, article_number, price, onChange }) => {
         <img alt="product-img" src={link} />
       </div>
       <div className="content">
-        <p>Artnr: {article_number}</p>
-        <p id="price">{price}:-</p>
+        <p className="art-title">Artnr: </p><p className="art-num">{article_number}</p>
+        <p className="price">{price}:-</p>
       </div>
     </div>
   );
