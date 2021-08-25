@@ -26,13 +26,6 @@ def getInfo(article_string):
     for item in list(article_list):
         if item == "":
             article_list.remove(item)
-    # Dummyproof the input
-    if article_list[0] == "" or len(article_list[0]) < 5:
-        article_list.pop(0)
-        print("The first item was not enterd properly, check it manually")
-    if article_list[-1] == "" or len(article_list[-1]) < 5:
-        article_list.pop(-1)
-        print("The last item was not enterd properly, check it manually")
     # List for all the prices and start driver
     price_list = []
     name_list = []
