@@ -9,9 +9,19 @@ const ProductBox = (props) => {
   const [showCopyButton, setShowCopyButton] = useState(false);
   const [showSpace, setShowSpace] = useState(false);
 
+  /***
+   * Function for selecting all products at the same time
+   */
+  function selectAll() {
+    setCheckedArticles([]);
+    props.products.map((product) => {
+      checkedArticles.push(product.article_number);
+    });
+  }
+
   /**
-   * A function for making a list of all the products that is checked, 
-   * it takes the boolean if the product is checked and then adds it to the list of checked buttons. 
+   * A function for making a list of all the products that is checked,
+   * it takes the boolean if the product is checked and then adds it to the list of checked buttons.
    * This function also handles if the copybutton should show or not
    * @param {boolean} isChecked The value if the button is checked
    * @param {string} article_number The article number of the product
@@ -27,12 +37,12 @@ const ProductBox = (props) => {
     if (checkedArticles.length > 0) {
       setShowCopyButton(true);
       // Check if the list is long enough to need extra space
-      if(props.products.length >= 6){
-        setShowSpace(true)
+      if (props.products.length >= 6) {
+        setShowSpace(true);
       }
     } else {
       setShowCopyButton(false);
-      setShowSpace(false)
+      setShowSpace(false);
     }
   }
 
@@ -40,7 +50,7 @@ const ProductBox = (props) => {
   useEffect(() => {
     setCheckedArticles([]);
     setShowCopyButton(false);
-    setShowSpace(false)
+    setShowSpace(false);
   }, [props.products]);
 
   return (
