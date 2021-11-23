@@ -39,7 +39,7 @@ export const Product = ({ name, link, article_number, price, onChange }) => {
       </div>
       <div className="content">
         <p className="art-title">Artnr: </p><p className="art-num">{article_number}</p>
-        <p className="price">{price}:-</p>
+        <p className="price">{Math.floor(price)== price && price + ":-" || price + "0"}</p>
       </div>
     </div>
   );
