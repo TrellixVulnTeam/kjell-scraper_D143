@@ -11,7 +11,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
 
 # Varible for the chromedriver
-chromedriver_path = "C:/Program/chromedriver.exe"
+chromedriver_path = "/bin/chromedriver"
 
 # The overarching delay for all webdriver waits
 delay = 5
@@ -39,6 +39,7 @@ Function for handling drivers
 class Driver():
     def __init__(self):
         chrome_options = Options()
+        chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument('headless')
         chrome_options.add_argument('window-size=1200x600')
         chrome_options.add_experimental_option(
@@ -164,7 +165,7 @@ def getInfo(article_string):
     link_list = []
 
     # Multiprocessing for gathering the information
-    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         futures = [executor.submit(gather, article)
                    for article in article_list]
 
