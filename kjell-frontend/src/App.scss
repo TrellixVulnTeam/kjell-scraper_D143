@@ -5,10 +5,18 @@ body {
   padding: 0px;
   overflow-x: hidden;
   overflow-y: hidden;
+  font-family: 'Lato', sans-serif;
 }
 header {
-  background-color: rgb(25, 117, 188);
+  background-color: #0066b5e6;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  svg{
+    margin-left: 3vw;  
+  }
 }
+
 .input_form {
   form {
     justify-content: center;
@@ -16,15 +24,15 @@ header {
     flex-direction: row;
     display: flex;
     width: 100vw;
-    height: 10vh;
-    margin-top: 0.8em;
+    height: 6vh;
+    margin-top: 0.3em;
   }
   #input_field {
     display: block;
     width: 78vw;
     border-radius: 2em;
-    padding: 1em;
-    font-size: 1.1em;
+    padding: 0.5em;
+    font-size: 1em;
   }
   textarea:focus,
   input:focus {
@@ -34,7 +42,7 @@ header {
     background-color: #5e9f1a;
     color: white;
     margin-left: 2vw;
-    height: 80%;
+    height: 70%;
     border: none;
     border-radius: 2em;
     display: block;
