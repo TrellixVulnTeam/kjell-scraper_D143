@@ -11,7 +11,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.options import Options
 
 # Varible for the chromedriver
-chromedriver_path = "/bin/chromedriver"
+chromedriver_path = "C:\Program Files\chromedriver.exe"
 
 # The overarching delay for all webdriver waits
 delay = 5

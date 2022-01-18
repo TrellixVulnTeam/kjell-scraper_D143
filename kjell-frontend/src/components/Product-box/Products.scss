@@ -27,6 +27,7 @@
 .copyButton:hover {
   background-color: rgb(20, 89, 141);
 }
+
 .product {
   /*box-shadow: rgb(179 179 179 / 50%) 0px 4px 16px 0px;*/
   width: 30vw;
@@ -59,8 +60,9 @@
     h1 {
       color: black;
       width: 50%;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       align-self: flex-start;
+      margin-top: 2vh;
       height: 10vw;
       overflow: hidden;
       overflow-y: auto;
@@ -70,6 +72,38 @@
       height: auto;
       border-radius: 1em;
       margin-right: 0.5vw;
+    }
+  }
+}
+@media screen and (max-width: 1310px) {
+  .product{
+    width: 46vw;
+    margin-left: 1.5vw;
+    .heading{
+      width: 40vw;
+      h1{
+        font-size: 1.2rem;
+        height: 15vw;
+        width: 50%;
+      }
+      img{
+        width: 15vw;
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .product{
+    width: 91vw;
+    .heading{
+      width: 85vw;
+      h1{
+        height: 25vw;
+        font-size: 1.5rem;
+      }
+      img{
+        width: 30vw;
+      }
     }
   }
 }
