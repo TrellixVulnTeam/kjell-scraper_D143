@@ -10,7 +10,7 @@ export const LoadingIndicator = (props) => {
         style={{
           display: "flex",
           width: "100vw",
-          height: "70vh",
+          height: "85vh",
           alignItems: "center",
           justifyContent: "center",
         }}
