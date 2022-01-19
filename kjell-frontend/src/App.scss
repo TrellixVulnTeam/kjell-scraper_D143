@@ -5,15 +5,15 @@ body {
   padding: 0px;
   overflow-x: hidden;
   overflow-y: hidden;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 header {
-  background-color: #0066b5e6;
+  background-color: #0066b5;
   height: 8vh;
   display: flex;
   align-items: center;
-  svg{
-    margin-left: 3vw;  
+  svg {
+    margin-left: 5vw;
   }
 }
 
@@ -23,14 +23,16 @@ header {
     align-items: center;
     flex-direction: row;
     display: flex;
-    width: 100vw;
+    width: 90vw;
+    margin-left: 5vw;
     height: 6vh;
-    margin-top: 0.3em;
+    margin-top: 0.5em;
   }
   #input_field {
     display: block;
-    width: 78vw;
-    border-radius: 2em;
+    width: 80%;
+    height: 2vh;
+    border-radius: 0.4em;
     padding: 0.5em;
     font-size: 1em;
   }
@@ -42,11 +44,11 @@ header {
     background-color: #5e9f1a;
     color: white;
     margin-left: 2vw;
-    height: 70%;
+    height: 5vh;
     border: none;
-    border-radius: 2em;
+    border-radius: 0.4em;
     display: block;
-    width: 15vw;
+    width: 20%;
     font-size: 1.2em;
   }
   #input-button:hover {

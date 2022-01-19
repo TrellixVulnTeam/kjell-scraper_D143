@@ -165,7 +165,7 @@ def getInfo(article_string):
     link_list = []
 
     # Multiprocessing for gathering the information
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
         futures = [executor.submit(gather, article)
                    for article in article_list]
 
