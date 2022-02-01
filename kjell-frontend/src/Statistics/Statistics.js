@@ -42,7 +42,7 @@ function Statistics() {
                 <tbody>
                     {dataList.map(x =>
                         <tr>
-                            <td>{x.timestamp}</td>
+                            <td>{x.timestamp.slice(0, -4)}</td>
                             <td>{String(Number(x.time).toFixed(2)) + "s"}</td>
                             <td>{x.run_number}</td>
                         </tr>
