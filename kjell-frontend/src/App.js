@@ -1,11 +1,11 @@
 import "./App.scss";
-import ProductBox from "./components/Product-box/ProductBox";
-import Header from "./components/Header";
 import React, { useState } from "react";
 import { trackPromise } from "react-promise-tracker";
 import { LoadingIndicator } from "./components/Loader";
+import ProductBox from "./components/Product-box/ProductBox";
 
-function App() {
+
+export default function App() {
   // Create states
   const [products, setProducts] = useState([]);
   const [string, setString] = useState("");
@@ -37,10 +37,8 @@ function App() {
     );
   }
 
-  // Create the webapp
   return (
-    <div className="App">
-      <Header />
+    <div className="main-page">
       <div className="input_form">
         <form>
           <input
@@ -65,7 +63,7 @@ function App() {
         <ProductBox products={products} />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+

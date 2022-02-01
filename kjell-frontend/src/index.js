@@ -2,16 +2,25 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import Statistics from "./Statistics"
 import NotificationProvider from "./components/NotificationProvider";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+
+const rootElement = document.getElementById("root")
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <NotificationProvider>
-      <App />
+      <Header />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/statistics" element={<Statistics />} />
+      </Routes>
     </NotificationProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </BrowserRouter>,
+  rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function
