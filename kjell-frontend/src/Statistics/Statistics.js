@@ -11,7 +11,7 @@ function Statistics() {
             setDataList(data)
         }))
         )
-    }, [dataList])
+    }, [])
 
 
     return (
