@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-import Statistics from "./Statistics"
-import NotificationProvider from "./components/NotificationProvider";
+import App from "./App/App";
+import Statistics from "./Statistics/Statistics"
+import NotificationProvider from "./App/components/NotificationProvider";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./App/components/Header";
 
 const rootElement = document.getElementById("root")
 
