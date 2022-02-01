@@ -1,7 +1,9 @@
+from functools import total_ordering
 import re
 import concurrent.futures
 import threading
 import time
+import psycopg2
 # Selenium import (they clutter)
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -12,6 +14,12 @@ from selenium.webdriver.chrome.options import Options
 
 # Varible for the chromedriver
 chromedriver_path = "C:\Program Files\chromedriver.exe"
+
+db_name = "kjell"
+db_username = "postgres"
+db_password = "chaplin97"
+db_port = "5432"
+db_host = "192.168.1.237"
 
 # The overarching delay for all webdriver waits
 delay = 5
@@ -153,6 +161,9 @@ Main function for getting the infromations for a string of articles
 
 def getInfo(article_string):
 
+    con = psycopg2.connect(dbname=db_name, password=db_password,
+                           port=db_port, user=db_username, host=db_host)
+
     start_time = time.time()
 
     # Make string into list and cutting away space and |
@@ -188,5 +199,15 @@ def getInfo(article_string):
         product_list.append(
             Products(article, name_list[index], price_list[index], link_list[index]))
 
-    print("Total time = " + str(time.time() - start_time))
+    total_time = time.time() - start_time
+    run_number = len(product_list)
+    cur = con.cursor()
+    cur.execute(f"""
+        INSERT INTO kjell(date, time, run_number)
+        VALUES (current_timestamp, {total_time}, {run_number});
+    """)
+    con.commit()
+    cur.close()
+    con.close()
+    print("Total time = " + str(total_time))
     return(product_list)
