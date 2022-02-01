@@ -160,10 +160,11 @@ Main function for getting the infromations for a string of articles
 
 
 def getInfo(article_string):
-
+    # Create a connection for the statistics database
     con = psycopg2.connect(dbname=db_name, password=db_password,
                            port=db_port, user=db_username, host=db_host)
 
+    # Start timer
     start_time = time.time()
 
     # Make string into list and cutting away space and |
@@ -199,7 +200,9 @@ def getInfo(article_string):
         product_list.append(
             Products(article, name_list[index], price_list[index], link_list[index]))
 
+    # Stop timer
     total_time = time.time() - start_time
+    # Get statistics and save to database
     run_number = len(product_list)
     cur = con.cursor()
     cur.execute(f"""
@@ -209,5 +212,7 @@ def getInfo(article_string):
     con.commit()
     cur.close()
     con.close()
+    # Log the total runtime
     print("Total time = " + str(total_time))
+    # Return the list of the products
     return(product_list)
