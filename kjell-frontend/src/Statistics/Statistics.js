@@ -3,12 +3,16 @@ import './Statistics.scss'
 import FunFactCard from "./components/FunFactCard";
 
 function Statistics() {
+    const [dataList, setDataList] = useState([])
 
-    const [test, setTest] = useState("test")
-
+    // The function for getting all the statistics 
     useEffect(() => {
-        setTest("effect loaded")
-    })
+        fetch("/api/getstats").then((res) => res.json().then((data) => data.map(x => {
+            setDataList(data)
+        }))
+        )
+    }, [dataList])
+
 
     return (
         <div className="statistics-page">
@@ -19,21 +23,22 @@ function Statistics() {
                 <FunFactCard title="Genomsnittlig tid" value="56" />
             </div>
             <table>
-                <tr>
-                    <th>Test</th>
-                    <th>test</th>
-                    <th>test</th>
-                </tr>
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Time</th>
+                        <th>Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {dataList.map(x =>
+                        <tr>
+                            <td>{x.timestamp}</td>
+                            <td>{String(Number(x.time).toFixed(2))+"s"}</td>
+                            <td>{x.run_number}</td>
+                        </tr>
+                    )}
+                </tbody>
             </table>
         </div>
     );

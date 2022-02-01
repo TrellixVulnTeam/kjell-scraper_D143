@@ -1,4 +1,3 @@
-from functools import total_ordering
 import re
 import concurrent.futures
 import threading
