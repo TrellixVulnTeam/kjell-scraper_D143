@@ -14,6 +14,13 @@
         align-items: center;
         width: 25vw;
         background-color: whitesmoke;
+        .funfact-value {
+            margin: 0;
+            margin-bottom: 0.5em;
+            font-size: 3em;
+            color: #ff6600;
+            font-weight: 700;
+        }
     }
     table,
     th,
@@ -24,6 +31,8 @@
         margin-top: 3vh;
         border-collapse: collapse;
         width: 85vw;
+        max-height: 60vh;
+        overflow-y: scroll;
     }
     th {
         background-color: rgb(197, 197, 197);
