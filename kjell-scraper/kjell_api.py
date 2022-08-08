@@ -160,8 +160,8 @@ Main function for getting the infromations for a string of articles
 
 def getInfo(article_string):
     # Create a connection for the statistics database
-    con = psycopg2.connect(dbname=db_name, password=db_password,
-                           port=db_port, user=db_username, host=db_host)
+    #con = psycopg2.connect(dbname=db_name, password=db_password,
+    #                       port=db_port, user=db_username, host=db_host)
 
     # Start timer
     start_time = time.time()
@@ -203,14 +203,14 @@ def getInfo(article_string):
     total_time = time.time() - start_time
     # Get statistics and save to database
     run_number = len(product_list)
-    cur = con.cursor()
-    cur.execute(f"""
-        INSERT INTO kjell(date, time, run_number)
-        VALUES (current_timestamp, {total_time}, {run_number});
-    """)
-    con.commit()
-    cur.close()
-    con.close()
+    #cur = con.cursor()
+    #cur.execute(f"""
+    #    INSERT INTO kjell(date, time, run_number)
+    #    VALUES (current_timestamp, {total_time}, {run_number});
+    #""")
+    #con.commit()
+    #cur.close()
+    #con.close()
     # Log the total runtime
     print("Total time = " + str(total_time))
     # Return the list of the products
